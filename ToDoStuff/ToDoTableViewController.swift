@@ -9,7 +9,6 @@
 import UIKit
 
 class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
-    
     var todoItems:[ToDoItem]!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +43,22 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
         self.present(addAlert, animated: true, completion: nil)
     }
     
+    @IBAction func showConnectivityAction(_ sender: Any) {
+       let actionSheet = UIAlertController(title: "ToDo Exchange", message: "Do you want to Host or to join a Session?", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Host a Session", style: .default, handler: { (action:UIAlertAction) in
+            
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Join a Session", style: .default, handler: { (action:UIAlertAction) in
+            
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        
+        self.present(actionSheet, animated: true, completion: nil)
+        
+    }
+    
     func didRequestDelete(_ cell: ToDoTableViewCell) {
         if let indexPath = tableView.indexPath(for: cell) {
             todoItems[indexPath.row].deleteItem()
@@ -59,6 +74,10 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
             todoItem.markAsCompleted()
             cell.todoLabel.attributedText = strikeThroughText(todoItem.title)
         }
+    }
+    
+    func didRequestShare(_ cell: ToDoTableViewCell) {
+         
     }
     
     func strikeThroughText (_ text:String) -> NSAttributedString {

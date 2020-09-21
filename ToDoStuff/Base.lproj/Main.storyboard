@@ -52,6 +52,14 @@
                                                 <action selector="deleteTodo:" destination="TG0-NG-2Yj" eventType="touchUpInside" id="mGg-bt-qHX"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dr1-p1-MnA">
+                                            <rect key="frame" x="187" y="36" width="40" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <state key="normal" title="Share"/>
+                                            <connections>
+                                                <action selector="shareTodo:" destination="TG0-NG-2Yj" eventType="touchUpInside" id="8f3-tR-UIZ"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -66,6 +74,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="To Do List" id="7BU-5p-p5M">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="zvj-4j-vCQ">
+                            <connections>
+                                <action selector="showConnectivityAction:" destination="WeW-Lo-w0Q" id="Js7-Bf-C2X"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dwX-Lh-KuG">
                             <connections>
                                 <action selector="addNewTodo:" destination="WeW-Lo-w0Q" id="EEx-fq-ytx"/>
